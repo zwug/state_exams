@@ -1,0 +1,25 @@
+{
+  "name": "state_exams",
+  "version": "1.0.0",
+  "description": "for studying purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zwug/state_exams.git"
+  },
+  "author": "zwug",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwug/state_exams/issues"
+  },
+  "homepage": "https://github.com/zwug/state_exams",
+  "dependencies": {
+    "ejs": "^2.3.1",
+    "express": "^4.12.2",
+    "jsx-loader": "^0.12.2",
+    "react": "^0.12.2"
+  }
+}
