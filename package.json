@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/zwug/state_exams",
   "dependencies": {
-    "ejs": "^2.3.1",
     "express": "^4.12.2",
+    "html-webpack-plugin": "^1.1.0",
     "jsx-loader": "^0.12.2",
-    "react": "^0.12.2"
+    "react": "^0.12.2",
+    "react-hot-loader": "^1.1.7",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
   }
 }
