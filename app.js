@@ -2,11 +2,11 @@ var express = require('express')
 var app = express();
 var path = require ('path');
 
-app.use(express.static(path.join(__dirname + '/build')));
-app.set('views', path.join(__dirname + '/build'));
+app.use(express.static(path.join(__dirname + '/app/build')));
+app.set('views', path.join(__dirname + '/app/build'));
 
 app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/build/index.html');
+    res.sendfile(__dirname + '/app/build/index.html');
 })
 
 var server = app.listen(3000, function () {
