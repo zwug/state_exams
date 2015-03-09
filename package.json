@@ -30,6 +30,7 @@
     "less-loader": "^2.0.0",
     "react": "^0.12.2",
     "react-hot-loader": "^1.1.7",
+    "react-router": "^0.12.4",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.2",

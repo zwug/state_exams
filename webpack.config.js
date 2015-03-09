@@ -8,7 +8,7 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        './app/views/main.js'
+        './app/main.js'
     ],
     output: {
         path: './app/build',
@@ -24,7 +24,6 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-               //loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer!less-loader"),
                 loader: 'style!css!autoprefixer!less',
                 exclude: /node_modules/
             },
@@ -39,7 +38,7 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'app/views/app.html'
+            template: 'app/design/index.html'
         }),
         new ExtractTextPlugin("app.css")
     ]
