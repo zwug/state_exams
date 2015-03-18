@@ -3,6 +3,7 @@ var app = express();
 var path = require ('path');
 
 app.use(express.static(path.join(__dirname + '/app/build')));
+app.use(express.static(path.join(__dirname + '/app/study-book-files')));
 app.set('design', path.join(__dirname + '/app/build'));
 
 app.get('/', function (req, res) {

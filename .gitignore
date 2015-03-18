@@ -1,4 +1,5 @@
 /node_modules/
 /.idea/
 /app/build/
+/app/study-book-files/
 *.log

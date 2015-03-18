@@ -2,13 +2,15 @@ require('./design/less/main.less');
 
 const React = require('react');
 const Router = require('react-router');
-let {DefaultRoute, Link, Route, RouteHandler} = Router;
+let {DefaultRoute, Route} = Router;
+let App = require('./design/components/app');
+let StudyBook = require('./design/components/study-book');
 let Home = require('./design/components/home');
 
 let routes = (
-    <Route name="app" path="/" handler={Home}>
-        <Route name="inbox" handler={Home}/>
-        <Route name="calendar" handler={Home}/>
+    <Route name="app" path="/" handler={App}>
+        <Route name="study-book" path="/study-book/:id" handler={StudyBook}/>
+        <Route name="calendar" handler={StudyBook}/>
         <DefaultRoute handler={Home}/>
     </Route>
 );

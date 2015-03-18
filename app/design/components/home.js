@@ -1,23 +1,16 @@
 const React = require('react');
-let {Link} = require('react-router');
 
-let HomePage = React.createClass({
+
+let Home = React.createClass({
     render() {
         return (
-            <div className="container-fluid">
-                <nav className="navbar navbar-default navbar-fixed-top">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                            <ul className="nav navbar-nav">
-                                <li><Link to="app">Главная</Link></li>
-                                <li><Link to="inbox">Учебник</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+            <div className="row">
+                <div className="col-md-12 text-center">
+                    <h1>Компьютерные технологии обучения</h1>
+                </div>
             </div>
         );
     }
 });
 
-module.exports = HomePage;
+module.exports = Home;
