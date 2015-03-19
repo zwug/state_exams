@@ -16,6 +16,9 @@ let HomePage = React.createClass({
                                     <li>
                                         <Link to="study-book" params={{id: 1}}>Учебник</Link>
                                     </li>
+                                    <li>
+                                        <Link to="test">Тест</Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
