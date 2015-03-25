@@ -1,5 +1,8 @@
 const React = require('react');
-require("../../study-book-files/5-A.png");
+let Image5a = require("../../study-book-files/5-A.png");
+let Image5b = require("../../study-book-files/5-B.png");
+let Image5c = require("../../study-book-files/5-C.png");
+let Image5d = require("../../study-book-files/5-D.png");
 
 
 let Test = React.createClass({
@@ -143,6 +146,72 @@ let Test = React.createClass({
                             </div>
                         </div>
 
+                        <div className="row">
+                            <div className="question-block col-md-12">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <span>Поберите по соответсвию</span>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-offset-1 col-md-7">
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <span>длина кривой</span>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <span>площадь поверхности вращения</span>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <span>площадь цилиндрической поверхности</span>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <span>масса материально линии</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-4">
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <img src={Image5a} />
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <div className="col-md-12">
+                                                    <img src={Image5b} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <div className="col-md-12">
+                                                    <img src={Image5c} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <div className="col-md-12">
+                                                    <img src={Image5d} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <input type="text" name="question-5" placeholder="Пример ответа: A-1 B-2 C-3 D-4" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

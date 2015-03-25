@@ -39,6 +39,13 @@ let StudyBook = React.createClass({
                             </h4>
                         </div>
                     </div>
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h4>
+                                <Link to="links">Ссылки</Link>
+                            </h4>
+                        </div>
+                    </div>
                 </div>
                 <iframe src={Pdf} className="pdf-frame col-md-10">
                     Ваш браузер не поддерживает плавающие фреймы!
