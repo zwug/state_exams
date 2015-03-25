@@ -10,8 +10,6 @@ let StudyBook = React.createClass({
                         <a href="http://www.alleng.ru/d/math-stud/math-st854.htm">Вся высшая математика. Том 1-7.  Краснов М.Л., Киселев А.И. и др.</a>
                     </div>
                     <div class="row">
-
-
                         <a href="http://www.for-stydents.ru/matematika/uchebniki/kurs-matematicheskogo-analiza-tom-2.html">Курс математического анализа. Том 2</a>
                     </div>
                     <div class="row">
