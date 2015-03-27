@@ -15,7 +15,7 @@ let Test = React.createClass({
                             <div className="question-block col-md-12">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <span>Что такое кусочно-гладкая функция?</span>
+                                        <span>Кусочно-гладкая функция это функция, которая</span>
                                     </div>
                                 </div>
                                 <div className="row">
@@ -27,7 +27,7 @@ let Test = React.createClass({
                                 <div className="row">
                                     <div className="col-md-12">
                                         <input type="radio" name="question-1" value="2" />
-                                        Производная в любой точке этой функии равна нулю
+                                        В любой точке имеет производную, равную нулю
                                     </div>
                                 </div>
                                 <div className="row">
@@ -49,7 +49,7 @@ let Test = React.createClass({
                             <div className="question-block col-md-12">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <span>Свойство ортогональности каких двух функций используется в ряде Фурье?</span>
+                                        <span>Выберите две функции, свойство ортогональности которых используется в ряде Фурье</span>
                                     </div>
                                 </div>
                                 <div className="row">
@@ -150,7 +150,7 @@ let Test = React.createClass({
                             <div className="question-block col-md-12">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <span>Поберите по соответсвию</span>
+                                        <span>Соотнесите значения с формулами</span>
                                     </div>
                                 </div>
                                 <div className="row">
