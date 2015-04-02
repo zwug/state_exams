@@ -1,4 +1,5 @@
 const React = require('react');
+
 let Image5a = require("../../study-book-files/5-A.png");
 let Image5b = require("../../study-book-files/5-B.png");
 let Image5c = require("../../study-book-files/5-C.png");
@@ -163,16 +164,6 @@ let Test = React.createClass({
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <span>площадь поверхности вращения</span>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-md-12">
-                                                <span>площадь цилиндрической поверхности</span>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-md-12">
-                                                <span>масса материально линии</span>
                                             </div>
                                         </div>
                                     </div>

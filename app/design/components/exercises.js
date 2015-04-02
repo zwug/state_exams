@@ -6,17 +6,17 @@ let Hints = [
     {
         correct: 3,
         textCorrect: "Правильно",
-        textWrong: "Неправильно, повторите раздел \"Криволинейные интегралы\" "
+        textWrong: "Неправильно, повторите раздел \" Формула Грина\" "
     },
     {
         correct: 2,
         textCorrect: "Правильно",
-        textWrong: "Неправильно, повторите раздел \"Криволинейные интегралы\" "
+        textWrong: "Неправильно, повторите раздел \"Криволинейный интеграл первого рода\" "
     },
     {
         correct: 1,
         textCorrect: "Правильно",
-        textWrong: "Неправильно, повторите раздел \"Ряд Фурье\" "
+        textWrong: "Неправильно, повторите раздел \"Определение ряда Фурье и принцип локализации\" "
     }
 ];
 
@@ -24,7 +24,7 @@ let Exercises = React.createClass({
 
     getInitialState() {
         let hintArr = [];
-        for (let i = 0; i < 3; ++i){
+        for (let i = 0; i < 3; ++i) {
             hintArr.push({
                 text: "",
                 className: ""
@@ -45,11 +45,11 @@ let Exercises = React.createClass({
 
     radioChange(i, event) {
         let hintsCopy = this.state.hints;
-        if(event.target.value == Hints[i].correct){
+        if (event.target.value == Hints[i].correct) {
             hintsCopy[i].text = Hints[i].textCorrect;
             hintsCopy[i].className = "bg-success";
         }
-        else{
+        else {
             hintsCopy[i].text = Hints[i].textWrong;
             hintsCopy[i].className = "bg-danger";
         }
@@ -68,6 +68,10 @@ let Exercises = React.createClass({
                 <div className="col-md-offset-3 col-md-6">
                     <form>
                         <div className="row">
+                            <div className="col-md-12">
+                                <h3>Выполните задания для проверки знаний. Если Вы ошибетесь, появится подсказка
+                                    с указанем, что нужно повторить.</h3>
+                            </div>
                             <div className="question-block col-md-12">
                                 <div className="row">
                                     <div className="col-md-12">

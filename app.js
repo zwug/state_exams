@@ -2,6 +2,7 @@ var express = require('express')
 var app = express();
 var path = require ('path');
 var pg = require ('pg');
+var testController = require('./controllers/test');
 
 var knex = require('knex')({
     client: 'pg',
@@ -13,6 +14,7 @@ var knex = require('knex')({
     }
 });
 
+testController(app);
 app.use(express.static(path.join(__dirname + '/app/build')));
 app.use(express.static(path.join(__dirname + '/app/study-book-files')));
 app.set('design', path.join(__dirname + '/app/build'));
