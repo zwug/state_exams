@@ -1,24 +1,9 @@
 const React = require('react');
 let {Link, RouteHandler} = require('react-router');
 const Router = require('react-router');
-let $ = require('jquery');
-
 
 let StudyBook = React.createClass({
     mixins: [Router.State],
-    componentDidMount: function() {
-        $.ajax({
-            url: '/api',
-            dataType: 'json',
-            success: function(data) {
-                console.log(data);
-                this.setState({data: data});
-            }.bind(this),
-            error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-    },
 
     render() {
 

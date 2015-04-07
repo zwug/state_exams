@@ -1,4 +1,5 @@
 const React = require('react');
+let $ = require('jquery');
 
 let Image5a = require("../../study-book-files/5-A.png");
 let Image5b = require("../../study-book-files/5-B.png");
@@ -7,6 +8,21 @@ let Image5d = require("../../study-book-files/5-D.png");
 
 
 let Test = React.createClass({
+
+    componentDidMount: function() {
+        $.ajax({
+            url: '/api/tests',
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+    },
+
     render() {
         return (
             <div className="row">
