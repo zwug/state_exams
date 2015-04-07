@@ -29,8 +29,6 @@ var TestController = function (app) {
   };
 
   app.get('/api/tests', this.selectTests);
-  app.use('/api/tests', function (req, res) {
-  });
 
 };
 
