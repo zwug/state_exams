@@ -3,7 +3,6 @@ const React = require('react');
 let MultipleAnswer = React.createClass({
 
   render() {
-    console.log(this.props);
     return (
       <div className="row">
         <div className="question-block col-md-12">

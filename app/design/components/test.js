@@ -14,11 +14,21 @@ let Test = React.createClass({
       url: '/api/tests',
       dataType: 'json',
       success: function (data) {
-        this.setState({questionData: data});
+        this.setState({questionData: data, totalMark: 0, answers: {} });
       }.bind(this),
       error: function (xhr, status, err) {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
+    });
+  },
+
+  singleChange(i, event) {
+    let answers = this.state.answers;
+    let singleArr = [];
+    singleArr[i] = event.target.value;
+    answers.singleArr = singleArr;
+    this.setState({
+      answers: answers
     });
   },
   
@@ -27,8 +37,8 @@ let Test = React.createClass({
     if(this.state){
       questionList =
         <form>
-          <SingleAnswer questionData={this.state.questionData.singleAnswer[0] } questionNum={1} />
-          <SingleAnswer questionData={this.state.questionData.singleAnswer[1] } questionNum={2} />
+          <SingleAnswer questionData={this.state.questionData.singleAnswer[0] } questionNum={1} onchange={this.singleChange.bind(this, 0)}/>
+          <SingleAnswer questionData={this.state.questionData.singleAnswer[1] } questionNum={2} onchange={this.singleChange.bind(this, 1)}/>
           <MultipleAnswer questionData={this.state.questionData.multipleAnswer[0] } questionNum={3} />
           <MultipleAnswer questionData={this.state.questionData.multipleAnswer[1] } questionNum={4} />
           <ComplianceAnswer questionData={this.state.questionData.complianceAnswer[0] } questionNum={5} />
