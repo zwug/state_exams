@@ -29,7 +29,6 @@ var TestController = function (app) {
   };
 
   app.get('/api/tests', this.selectTests);
-
 };
 
 module.exports = TestController;
