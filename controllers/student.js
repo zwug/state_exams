@@ -20,9 +20,10 @@ var StudentController = function (app) {
       res.json(data);
     });
   };
-  
+
   this.getMarksOnGroup = function(req, res) {
-    StudentModel.getMarksOnGroup(req.body.group).then(function (data) {
+    console.log(req.query);
+    StudentModel.getMarksOnGroup(req.query.group).then(function (data) {
       res.json(data);
     });
   };
@@ -30,6 +31,7 @@ var StudentController = function (app) {
 
   app.get('/api/students', this.selectTests);
   app.get('/api/groups', this.getGroups);
+  app.get('/api/get-by-groups', this.getMarksOnGroup);
 };
 
 module.exports = StudentController;

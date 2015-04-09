@@ -3,14 +3,14 @@ let $ = require('jquery');
 
 let Results = React.createClass({
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       groups: [],
       selectedGroup: ''
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
     $.ajax({
       url: '/api/groups',
       dataType: 'json',
@@ -31,15 +31,40 @@ let Results = React.createClass({
     });
   },
 
+  getDataByGroup() {
+    console.log(this.state.selectedGroup);
+    let data = {};
+    data.group = this.state.selectedGroup;
+    $.ajax({
+      url: '/api/get-by-groups',
+      data: data,
+      dataType: 'json',
+      success: function (data) {
+        console.log(data);
+        this.setState({
+         // groups: groups
+        });
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+
   render() {
     return (
       <div className="row">
         <div className="col-md-offset-1 col-md-10">
-          <select onChange={this.selectGroup}>
+          <div className="row">
+            <span className="btn btn-default" onClick={this.getDataByGroup}>По группе</span>
+          </div>
+          <div className="row">
+            <select onChange={this.selectGroup}>
           {this.state.groups.map((group, i) => {
             return (<option key={i} value={group.study_group}>{group.study_group}</option>);
           })}
-          </select>
+            </select>
+          </div>
         </div>
       </div>
     );
