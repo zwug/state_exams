@@ -3,6 +3,8 @@ var app = express();
 var path = require ('path');
 var pg = require ('pg');
 var testController = require('./controllers/test');
+var studentController = require('./controllers/student');
+var bodyParser = require('body-parser');
 
 var knex = require('knex')({
     client: 'pg',
@@ -13,8 +15,12 @@ var knex = require('knex')({
         database : 'state-exam'
     }
 });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 testController(app);
+studentController(app);
+
 app.use(express.static(path.join(__dirname + '/app/build')));
 app.use(express.static(path.join(__dirname + '/app/study-book-files')));
 app.set('design', path.join(__dirname + '/app/build'));

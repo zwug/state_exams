@@ -17,10 +17,9 @@ let Test = React.createClass({
         this.setState({
           questionData: data,
           totalMark: 0,
+          student: {},
           answers: {
-            singleArr: [
-              0, 0
-            ],
+            singleArr: [],
             multipleArr: [
               [false, false, false, false], [false, false, false, false]
             ],
@@ -38,6 +37,15 @@ let Test = React.createClass({
       error: function (xhr, status, err) {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
+    });
+  },
+
+  StudentDataChange(event) {
+    let student = this.state.student;
+    student[event.target.name] = event.target.value;
+    console.log(student);
+    this.setState({
+      student: student
     });
   },
 
@@ -142,6 +150,27 @@ let Test = React.createClass({
     this.setState({
       totalMark: total
     });
+
+    this.sendTestData(total, results);
+  },
+
+  sendTestData(totalMark, results) {
+    let data = {};
+    data.student = this.state.student;
+    data.totalMark = totalMark;
+    data.results = results.join();
+    $.ajax({
+      url: '/api/tests',
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function (data) {
+
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   },
 
   render() {
@@ -166,17 +195,20 @@ let Test = React.createClass({
           <AdditionalAnswer questionData={this.state.questionData.additionalAnswer[1] } questionNum={10} onchange={this.additionalChange.bind(this, 1)}/>
           <div className="row">
             <div className="col-md-offset-3 col-md-6">
-              <input className="form-control student-data" type="text" name="name" placeholder="Имя"/>
+              <input className="form-control student-data" type="text" name="name" placeholder="Имя"
+                onChange={this.StudentDataChange}/>
             </div>
           </div>
           <div className="row">
             <div className="col-md-offset-3 col-md-6">
-              <input className="form-control student-data" type="text" name="lastname" placeholder="Фамилия"/>
+              <input className="form-control student-data" type="text" name="lastname" placeholder="Фамилия"
+                onChange={this.StudentDataChange}/>
             </div>
           </div>
           <div className="row">
             <div className="col-md-offset-3 col-md-6">
-              <input className="form-control student-data" type="text" name="study-group" placeholder="Группа"/>
+              <input className="form-control student-data" type="text" name="studyGroup" placeholder="Группа"
+                onChange={this.StudentDataChange}/>
             </div>
           </div>
           <div className="row">

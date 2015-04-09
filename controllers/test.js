@@ -28,7 +28,14 @@ var TestController = function (app) {
     });
   };
 
+  this.receiveTest = function(req, res){
+    console.log(req.body);
+    TestModel.saveStudentResults(req.body);
+
+  };
+
   app.get('/api/tests', this.selectTests);
+  app.post('/api/tests', this.receiveTest);
 };
 
 module.exports = TestController;
