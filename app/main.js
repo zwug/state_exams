@@ -9,6 +9,7 @@ let Test = require('./design/components/test');
 let Home = require('./design/components/home');
 let Links = require('./design/components/links');
 let Exercises = require('./design/components/exercises');
+let Results = require('./design/components/results');
 
 let routes = (
     <Route name="app" path="/" handler={App}>
@@ -16,6 +17,7 @@ let routes = (
         <Route name="links" path="/links" handler={Links}/>
         <Route name="test" handler={Test}/>
         <Route name="exercises" handler={Exercises}/>
+        <Route name="results" handler={Results}/>
         <DefaultRoute handler={Home}/>
     </Route>
 );
