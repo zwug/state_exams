@@ -24,7 +24,7 @@ let AdditionalAnswer = React.createClass({
           </div>
           <div className="row">
             <div className="col-md-12">
-              <input type="text" name={"question-" + this.props.questionNum} placeholder="Ответ" />
+              <input type="text" name={"question-" + this.props.questionNum} placeholder="Ответ" onChange={this.props.onchange}/>
             </div>
           </div>
         </div>

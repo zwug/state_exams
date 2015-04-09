@@ -66,7 +66,8 @@ let ComplianceAnswer = React.createClass({
           </div>
           <div className="row">
             <div className="col-md-12">
-              <input type="text" name={"question-" + this.props.questionNum} placeholder="Пример ответа: A-1 B-2" />
+              А - <input type="text" name={"question" + this.props.questionNum + "-A"} onChange={this.props.onchange}/>
+              Б - <input type="text" name={"question" + this.props.questionNum + "-B"} onChange={this.props.onchange}/>
             </div>
           </div>
         </div>

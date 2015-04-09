@@ -15,7 +15,7 @@ let MultipleAnswer = React.createClass({
           return (
             <div className="row" key={index}>
               <div className="col-md-12">
-                <input type="checkbox" name={"question-" + this.props.questionNum} value={index+1} />
+                <input type="checkbox" name={"question-" + this.props.questionNum} value={index+1} onChange={this.props.onchange}/>
                 {answer}
               </div>
             </div>

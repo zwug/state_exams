@@ -44,7 +44,7 @@ let ConseqAnswer = React.createClass({
           </div>
           <div className="row">
             <div className="col-md-12">
-              <input type="text" name={"question-" + this.props.questionNum} placeholder="Пример ответа: А,Б,В" />
+              <input type="text" name={"question-" + this.props.questionNum} placeholder="Пример ответа: А,Б,В" onChange={this.props.onchange}/>
             </div>
           </div>
         </div>
