@@ -15,6 +15,12 @@ var StudentModel = function () {
       .where({study_group: group});
   };
 
+  this.getAllByStudent = function(condition) {
+    console.log(condition);
+    return knex.table('student').innerJoin('test_results', 'test_results.student_id', 'student.id')
+      .where({student_id: condition.student_id});
+  };
+
   this.getAllGroups = function () {
     return knex.table('student').select('study_group').groupBy('study_group');
   };

@@ -21,6 +21,12 @@ var StudentController = function (app) {
     });
   };
 
+  this.getAllByStudent = function (req, res) {
+    StudentModel.getAllByStudent(req.query).then(function (data) {
+      res.json(data);
+    });
+  };
+
   this.getMarksOnGroup = function(req, res) {
     console.log(req.query);
     StudentModel.getMarksOnGroup(req.query.group).then(function (data) {
@@ -32,6 +38,7 @@ var StudentController = function (app) {
   app.get('/api/students', this.selectTests);
   app.get('/api/groups', this.getGroups);
   app.get('/api/get-by-groups', this.getMarksOnGroup);
+  app.get('/api/get-all-by-student', this.getAllByStudent);
 };
 
 module.exports = StudentController;
